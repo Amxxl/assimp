@@ -451,8 +451,8 @@ void glTF2Importer::ImportMeshes(glTF2::Asset& r)
             }
 
             std::vector<Mesh::Primitive::Target>& targets = prim.targets;
-            if (targets.size() > 0) {
-                aim->mNumAnimMeshes = targets.size();
+            if (!targets.empty()) {
+                aim->mNumAnimMeshes = (unsigned int)targets.size();
                 aim->mAnimMeshes = new aiAnimMesh*[aim->mNumAnimMeshes];
                 for (size_t i = 0; i < targets.size(); i++) {
                     aim->mAnimMeshes[i] = aiCreateAnimMesh(aim);

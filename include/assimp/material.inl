@@ -103,8 +103,12 @@ inline aiReturn aiMaterial::Get(const char* pKey,unsigned int type,
             return AI_FAILURE;
         }
 
-        iNum = std::min((size_t)iNum,prop->mDataLength / sizeof(Type));
-        ::memcpy(pOut,prop->mData,iNum * sizeof(Type));
+// std::min has in some cases a conflict with a defined min
+#ifdef min
+#   undef min
+#endif
+        iNum = static_cast<unsigned int>(std::min(static_cast<size_t>(iNum), prop->mDataLength / sizeof(Type)));
+        std::memcpy(pOut,prop->mData,iNum * sizeof(Type));
         if (pMax) {
             *pMax = iNum;
         }
