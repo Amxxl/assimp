@@ -7,7 +7,7 @@ project "assimp"
 	
 	defines {
 		-- "SWIG",
-		"ASSIMP_BUILD_NO_OWN_ZLIB",
+		-- "ASSIMP_BUILD_NO_OWN_ZLIB",
 	
 		"ASSIMP_BUILD_NO_X_IMPORTER",
 		"ASSIMP_BUILD_NO_3DS_IMPORTER",
@@ -48,7 +48,7 @@ project "assimp"
 		"ASSIMP_BUILD_NO_NDO_IMPORTER",
 		"ASSIMP_BUILD_NO_IFC_IMPORTER",
 		"ASSIMP_BUILD_NO_XGL_IMPORTER",
-		"ASSIMP_BUILD_NO_FBX_IMPORTER",
+		-- "ASSIMP_BUILD_NO_FBX_IMPORTER",
 		"ASSIMP_BUILD_NO_ASSBIN_IMPORTER",
 		-- "ASSIMP_BUILD_NO_GLTF_IMPORTER",
 		"ASSIMP_BUILD_NO_C4D_IMPORTER",
@@ -129,7 +129,46 @@ project "assimp"
 		"code/CalcTangentsProcess.cpp",
 		"code/ScaleProcess.cpp",
 		"code/EmbedTexturesProcess.cpp",
+
+		-- FBX support.
+		"code/FBXAnimation.cpp",
+		"code/FBXBinaryTokenizer.cpp",
+		"code/FBXCommon.h",
+		"code/FBXCompileConfig.h",
+		"code/FBXConverter.cpp",
+		"code/FBXConverter.h",
+		"code/FBXDeformer.cpp",
+		"code/FBXDocument.cpp",
+		"code/FBXDocument.h",
+		"code/FBXDocumentUtil.cpp",
+		"code/FBXDocumentUtil.h",
+		"code/FBXExporter.cpp",
+		"code/FBXExporter.h",
+		"code/FBXExportNode.cpp",
+		"code/FBXExportNode.h",
+		"code/FBXExportProperty.cpp",
+		"code/FBXExportProperty.h",
+		"code/FBXImporter.cpp",
+		"code/FBXImporter.h",
+		"code/FBXImportSettings.h",
+		"code/FBXMaterial.cpp",
+		"code/FBXMeshGeometry.cpp",
+		"code/FBXMeshGeometry.h",
+		"code/FBXModel.cpp",
+		"code/FBXNodeAttribute.cpp",
+		"code/FBXParser.cpp",
+		"code/FBXParser.h",
+		"code/FBXProperties.cpp",
+		"code/FBXProperties.h",
+		"code/FBXTokenizer.cpp",
+		"code/FBXTokenizer.h",
+		"code/FBXUtil.cpp",
+		"code/FBXUtil.h",
+
+		-- contrib builds.
 		"contrib/irrXML/*",
+		"contrib/zlib/**.h",
+		"contrib/zlib/**.c"
 	}
 
 	includedirs {
