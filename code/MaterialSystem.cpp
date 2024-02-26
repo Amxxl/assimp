@@ -405,6 +405,15 @@ aiMaterial::~aiMaterial()
 }
 
 // ------------------------------------------------------------------------------------------------
+aiString aiMaterial::GetName() const
+{
+    aiString name;
+    Get(AI_MATKEY_NAME, name);
+
+    return name;
+}
+
+// ------------------------------------------------------------------------------------------------
 void aiMaterial::Clear()
 {
     for (unsigned int i = 0; i < mNumProperties;++i)    {

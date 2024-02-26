@@ -652,6 +652,14 @@ public:
     ~aiMaterial();
 
     // -------------------------------------------------------------------
+    /**
+      * @brief Returns the name of the material.
+      * @return The name of the material.
+      */
+    // -------------------------------------------------------------------
+    aiString GetName() const;
+
+    // -------------------------------------------------------------------
     /** @brief Retrieve an array of Type values with a specific key
      *  from the material
      *
